@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function Typewriter({ text, speed = 160, delay = 300 }) {
+function Typewriter({ text, speed = 160, delay = 300, className }) {
   const [display, setDisplay] = useState("");
 
   useEffect(() => {
@@ -22,8 +22,8 @@ function Typewriter({ text, speed = 160, delay = 300 }) {
 
   return (
     <span className="typewriter">
-      {display}
-      <span className="caret" aria-hidden="true">|</span>
+      <span className={className}>{display}</span>
+      <span className="caret" aria-hidden="true"></span>
     </span>
   );
 }
@@ -153,7 +153,7 @@ function BinaryGlobe({ size = 240, density = 12, speed = 0.003, growDuration = 1
   }, [size, density, speed]);
 
   return (
-    <div className="binary-globe">
+    <div className="binary-globe" style={{"--globe": `${size}px`}}>
       <canvas ref={canvasRef} />
     </div>
   );
@@ -162,17 +162,18 @@ function BinaryGlobe({ size = 240, density = 12, speed = 0.003, growDuration = 1
 export default function Hero() {
   return (
     <section id="home" data-section className="section hero">
-      <BinaryGlobe size={260} density={12} speed={0.0032} growDuration={1600} />
+      <BinaryGlobe size={320} density={12} speed={0.0032} growDuration={1600} />
       <h1>
-        Hi, I am <Typewriter text="Piotr" /> 👋
+        Hi, I am <Typewriter text="Piotr." className="accent-strong" />
       </h1>
       <p className="lead">
     I’m a Data Engineer and data enthusiast, building infrastructures and models that process billions of records for millions of customers. 
     Every day I work on turning complex data into reliable solutions with real-world impact.
       </p>
       <div style={{display:"flex", gap:".75rem", marginTop:"1rem", justifyContent:"center"}}>
-        <a className="button solid" href="#projects">Projects</a>
-        <a className="button" href="#contact">Let's talk</a>
+        <a className="button solid big" href="mailto:thekruk08@gmail.com" aria-label="Send email to Piotr">
+          Let's talk
+        </a>
       </div>
     </section>
   );

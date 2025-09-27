@@ -4,7 +4,7 @@ export default function About() {
       <div className="about-grid">
         <div className="about-media">
           <div className="about-photo" aria-hidden="true">
-            <span>PK</span>
+            <span>Photo soon :)</span>
           </div>
         </div>
         <div className="about-content">
