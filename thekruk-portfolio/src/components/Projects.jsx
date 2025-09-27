@@ -3,7 +3,7 @@ import { projects } from "../data/projects.js";
 export default function Projects() {
   return (
     <section id="projects" data-section className="section">
-      <h2>Projekte</h2>
+      <h2>Projects</h2>
       <div className="grid">
         {projects.map((p, i) => (
           <article key={i} className="card">
